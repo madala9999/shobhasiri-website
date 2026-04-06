@@ -177,6 +177,32 @@ section { padding: 88px 0; }
 .stat-card h3 { font-size: 2rem; font-weight: 700; color: var(--blue); }
 .stat-card p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
 
+/* ── MEET THE DOCTOR ── */
+#doctor { background: var(--white); }
+
+.doctor-inner {
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: 56px; align-items: start;
+}
+
+.doctor-photo-wrap {
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26,111,180,0.15);
+}
+
+.doctor-photo { width: 100%; display: block; }
+
+.doctor-bio p {
+  color: var(--muted); margin-bottom: 16px; font-size: 0.97rem;
+}
+.doctor-bio strong { color: var(--blue); }
+.doctor-bio em { color: var(--text); font-style: italic; }
+
+@media (max-width: 768px) {
+  .doctor-inner { grid-template-columns: 1fr; }
+  .doctor-photo-wrap { max-width: 260px; margin: 0 auto; }
+}
+
 /* ── CONTACT ── */
 .contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; }
 
