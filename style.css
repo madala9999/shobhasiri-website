@@ -1,14 +1,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --blue: #1a6fb4;
-  --blue-light: #e8f2fc;
-  --blue-dark: #115490;
-  --text: #1a1a2e;
-  --muted: #64748b;
-  --border: #e2e8f0;
+  --blue: #D96846;
+  --blue-light: #faeae4;
+  --blue-dark: #b85535;
+  --green: #596235;
+  --green-dark: #3e4524;
+  --text: #2F3020;
+  --muted: #6b6e5a;
+  --border: #dddbd8;
   --white: #ffffff;
-  --bg: #f8fafc;
+  --bg: #f5f4f0;
 }
 
 html { scroll-behavior: smooth; }
@@ -70,7 +72,7 @@ body {
 #hero {
   position: relative; overflow: hidden;
   padding: 140px 0 100px;
-  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 60%);
+  background: linear-gradient(135deg, #faeae4 0%, #ffffff 60%);
 }
 
 .hero-content { position: relative; z-index: 1; max-width: 640px; }
@@ -116,7 +118,7 @@ body {
 .hero-shape {
   position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
   width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, #c3e0f9 0%, transparent 70%);
+  background: radial-gradient(circle, #f0c9bb 0%, transparent 70%);
   opacity: 0.5;
 }
 
@@ -146,7 +148,7 @@ section { padding: 88px 0; }
   border-radius: 12px; padding: 32px;
   transition: box-shadow 0.2s, transform 0.2s;
 }
-.service-card:hover { box-shadow: 0 8px 32px rgba(26,111,180,0.12); transform: translateY(-4px); }
+.service-card:hover { box-shadow: 0 8px 32px rgba(217,104,70,0.15); transform: translateY(-4px); }
 
 .service-icon { font-size: 2rem; margin-bottom: 16px; }
 .service-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
@@ -174,7 +176,9 @@ section { padding: 88px 0; }
   background: var(--blue-light); border-radius: 12px;
   padding: 28px 24px; text-align: center;
 }
-.stat-card h3 { font-size: 2rem; font-weight: 700; color: var(--blue); }
+.stat-card:nth-child(odd) { background: var(--blue-light); }
+.stat-card:nth-child(even) { background: #edf0e6; }
+.stat-card h3 { font-size: 2rem; font-weight: 700; color: var(--green); }
 .stat-card p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
 
 /* ── MEET THE DOCTOR ── */
@@ -187,7 +191,7 @@ section { padding: 88px 0; }
 
 .doctor-photo-wrap {
   border-radius: 16px; overflow: hidden;
-  box-shadow: 0 8px 32px rgba(26,111,180,0.15);
+  box-shadow: 0 8px 32px rgba(89,98,53,0.2);
 }
 
 .doctor-photo { width: 100%; display: block; }
@@ -195,7 +199,7 @@ section { padding: 88px 0; }
 .doctor-bio p {
   color: var(--muted); margin-bottom: 16px; font-size: 0.97rem;
 }
-.doctor-bio strong { color: var(--blue); }
+.doctor-bio strong { color: var(--green); }
 .doctor-bio em { color: var(--text); font-style: italic; }
 
 @media (max-width: 768px) {
@@ -239,7 +243,7 @@ section { padding: 88px 0; }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--text); color: var(--white);
+  background: #2F3020; color: var(--white);
   padding: 32px 0;
 }
 .footer-inner {
