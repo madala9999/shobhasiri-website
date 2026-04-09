@@ -216,14 +216,6 @@ section { padding: 88px 0; }
 }
 
 /* Sidebar */
-.doctor-sidebar-photo img {
-  width: 100%; border-radius: 12px; display: block;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
-.doctor-sidebar-photo h3 {
-  font-size: 1.1rem; font-weight: 700; margin-top: 14px;
-  color: var(--text);
-}
 .doctor-sidebar-info {
   margin-top: 24px; display: flex; flex-direction: column; gap: 18px;
 }
