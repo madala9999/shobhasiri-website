@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shobhasiri Website – Deployment SOP</title>
+  <style>
+    body {
+      font-family: Calibri, Arial, sans-serif;
+      max-width: 800px;
+      margin: 60px auto;
+      color: #222;
+      line-height: 1.7;
+    }
+    h1 {
+      text-align: center;
+      color: #1a3c5e;
+      border-bottom: 3px solid #1a3c5e;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #1a3c5e;
+      margin-top: 40px;
+      border-left: 5px solid #1a3c5e;
+      padding-left: 10px;
+    }
+    .meta {
+      text-align: center;
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th {
+      background-color: #1a3c5e;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background-color: #f5f8fc;
+    }
+    code {
+      background: #eef2f7;
+      border: 1px solid #ccd6e0;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: Consolas, monospace;
+      font-size: 0.95em;
+      color: #c0392b;
+    }
+    .code-block {
+      background: #1e2a38;
+      color: #a8d8a8;
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-family: Consolas, monospace;
+      font-size: 0.95em;
+      margin: 12px 0;
+      white-space: pre;
+    }
+    .note {
+      background: #fff8e1;
+      border-left: 5px solid #f9a825;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .tip {
+      background: #e8f5e9;
+      border-left: 5px solid #2e7d32;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .step-num {
+      display: inline-block;
+      background: #1a3c5e;
+      color: white;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      line-height: 26px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #999;
+      font-size: 0.85em;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Shobhasiri Dental Website<br>Deployment Standard Operating Procedure</h1>
+<div class="meta">
+  Website: https://madala9999.github.io/shobhasiri-website/<br>
+  Repository: https://github.com/madala9999/shobhasiri-website<br>
+  Last Updated: April 2026
+</div>
+
+<h2>Overview</h2>
+<p>
+  This document describes the steps required to update the live Shobhasiri dental website
+  after making changes to any local files (e.g., <code>index.html</code>, <code>style.css</code>, images).
+  The website is hosted on <strong>GitHub Pages</strong> and is automatically published
+  whenever changes are pushed to the <code>main</code> branch on GitHub.
+</p>
+
+<h2>Tools Required</h2>
+<table>
+  <tr><th>Tool</th><th>Purpose</th></tr>
+  <tr><td>VS Code (or any text editor)</td><td>Edit website files locally</td></tr>
+  <tr><td>Terminal / Command Prompt</td><td>Run Git commands to push changes</td></tr>
+  <tr><td>Web Browser</td><td>Verify the live site after deployment</td></tr>
+  <tr><td>GitHub Account</td><td>Hosts the code and serves the website</td></tr>
+</table>
+
+<h2>Step-by-Step Procedure</h2>
+
+<p><span class="step-num">1</span><strong>Make your changes locally</strong></p>
+<p>
+  Open the project folder in VS Code and edit the files you want to change.
+  Common files:
+</p>
+<table>
+  <tr><th>File</th><th>What it controls</th></tr>
+  <tr><td><code>index.html</code></td><td>All page content (text, sections, images)</td></tr>
+  <tr><td><code>style.css</code></td><td>Colors, fonts, layout, and spacing</td></tr>
+  <tr><td><code>images/</code> folder</td><td>Photos and logos used on the site</td></tr>
+</table>
+<p>Save the file after making changes (<code>Ctrl + S</code>).</p>
+
+<hr>
+
+<p><span class="step-num">2</span><strong>Preview changes locally (optional but recommended)</strong></p>
+<p>
+  Open <code>index.html</code> directly in your browser to review your changes before pushing.
+  Right-click the file → <em>Open with → Browser</em>.
+</p>
+<div class="note">
+  <strong>Note:</strong> Local preview may look slightly different from the live site in rare cases,
+  but it is good enough for checking text and layout changes.
+</div>
+
+<hr>
+
+<p><span class="step-num">3</span><strong>Open the Terminal in VS Code</strong></p>
+<p>In VS Code, go to <strong>Terminal → New Terminal</strong> (or press <code>Ctrl + `</code>).</p>
+<p>Make sure you are in the correct project folder. The terminal prompt should show:</p>
+<div class="code-block">c:\Users\drsre\shobhasiri-website</div>
+<p>If not, navigate there with:</p>
+<div class="code-block">cd "c:/Users/drsre/shobhasiri-website"</div>
+
+<hr>
+
+<p><span class="step-num">4</span><strong>Stage your changes</strong></p>
+<p>Tell Git which files you want to include in the update. To include <em>all changed files</em>:</p>
+<div class="code-block">git add .</div>
+<p>Or to add a specific file only:</p>
+<div class="code-block">git add index.html</div>
+
+<hr>
+
+<p><span class="step-num">5</span><strong>Commit your changes</strong></p>
+<p>Save a snapshot of your changes with a short description of what you changed:</p>
+<div class="code-block">git commit -m "Describe what you changed here"</div>
+<p>Examples of good commit messages:</p>
+<div class="code-block">git commit -m "Update doctor bio section"
+git commit -m "Add new service: teeth whitening"
+git commit -m "Fix contact phone number"</div>
+
+<hr>
+
+<p><span class="step-num">6</span><strong>Push to GitHub (deploy to live site)</strong></p>
+<div class="code-block">git push origin main</div>
+<p>This uploads your changes to GitHub. GitHub Pages will automatically detect the update
+and redeploy the live website.</p>
+
+<hr>
+
+<p><span class="step-num">7</span><strong>Wait for deployment</strong></p>
+<p>GitHub Pages usually takes <strong>1 to 2 minutes</strong> to rebuild and publish the site.</p>
+<p>To monitor deployment progress:</p>
+<ol>
+  <li>Go to <strong>https://github.com/madala9999/shobhasiri-website</strong></li>
+  <li>Click the <strong>Actions</strong> tab</li>
+  <li>You will see a workflow called <em>"pages build and deployment"</em> running</li>
+  <li>A green checkmark means the deployment is complete</li>
+</ol>
+
+<hr>
+
+<p><span class="step-num">8</span><strong>Verify the live site</strong></p>
+<p>Open your browser and visit:</p>
+<div class="code-block">https://madala9999.github.io/shobhasiri-website/</div>
+<div class="tip">
+  <strong>Tip:</strong> If you don't see your changes, press <code>Ctrl + Shift + R</code>
+  (hard refresh) to clear your browser cache and reload the latest version.
+</div>
+
+<h2>Quick Reference – Terminal Commands</h2>
+<table>
+  <tr><th>Command</th><th>What it does</th></tr>
+  <tr><td><code>git status</code></td><td>Shows which files have been changed</td></tr>
+  <tr><td><code>git add .</code></td><td>Stages all changed files for commit</td></tr>
+  <tr><td><code>git commit -m "message"</code></td><td>Saves a snapshot with a description</td></tr>
+  <tr><td><code>git push origin main</code></td><td>Pushes changes to GitHub (goes live)</td></tr>
+  <tr><td><code>git log --oneline</code></td><td>Shows history of past commits</td></tr>
+</table>
+
+<h2>Troubleshooting</h2>
+<table>
+  <tr><th>Problem</th><th>Solution</th></tr>
+  <tr>
+    <td>Changes not showing on live site</td>
+    <td>Wait 2 minutes, then do a hard refresh (<code>Ctrl + Shift + R</code>)</td>
+  </tr>
+  <tr>
+    <td>"Nothing to commit" message</td>
+    <td>The file was not saved, or the changes were already pushed. Check with <code>git status</code></td>
+  </tr>
+  <tr>
+    <td>Push rejected / authentication error</td>
+    <td>Make sure you are logged into GitHub in VS Code and have permission to push</td>
+  </tr>
+  <tr>
+    <td>Site shows old content after push</td>
+    <td>Check the Actions tab on GitHub to confirm deployment completed successfully</td>
+  </tr>
+</table>
+
+<h2>Important Links</h2>
+<table>
+  <tr><th>Resource</th><th>URL</th></tr>
+  <tr><td>Live Website</td><td>https://madala9999.github.io/shobhasiri-website/</td></tr>
+  <tr><td>GitHub Repository</td><td>https://github.com/madala9999/shobhasiri-website</td></tr>
+  <tr><td>GitHub Actions (deployment status)</td><td>https://github.com/madala9999/shobhasiri-website/actions</td></tr>
+  <tr><td>GitHub Pages Settings</td><td>https://github.com/madala9999/shobhasiri-website/settings/pages</td></tr>
+</table>
+
+<footer>
+  Shobhasiri Dental Website – Internal Deployment SOP &nbsp;|&nbsp; Prepared April 2026
+</footer>
+
+</body>
+</html>
