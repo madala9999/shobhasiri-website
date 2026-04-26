@@ -23,9 +23,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
   const form = this;
   const btn = form.querySelector('button[type="submit"]');
   const success = document.getElementById('formSuccess');
+  const error = document.getElementById('formError');
 
   btn.textContent = 'Sending...';
   btn.disabled = true;
+  error.classList.remove('show');
 
   try {
     const response = await fetch(form.action, {
@@ -39,10 +41,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
       form.reset();
       setTimeout(() => success.classList.remove('show'), 6000);
     } else {
-      alert('Something went wrong. Please try again or email us directly.');
+      error.classList.add('show');
+      setTimeout(() => error.classList.remove('show'), 8000);
     }
   } catch {
-    alert('Network error. Please check your connection and try again.');
+    error.textContent = 'Network error. Please check your connection and try again.';
+    error.classList.add('show');
+    setTimeout(() => error.classList.remove('show'), 8000);
   }
 
   btn.textContent = 'Send Message';
