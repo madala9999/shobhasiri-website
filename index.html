@@ -272,6 +272,39 @@
     </div>
   </footer>
 
+  <!-- Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open chat assistant">
+      <span class="chat-icon">💬</span>
+      <span class="chat-close-icon">✕</span>
+    </button>
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">🦷</div>
+          <div>
+            <p class="chat-name">Shobhasiri Dental</p>
+            <p class="chat-status">Ask us anything</p>
+          </div>
+        </div>
+        <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">✕</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot"><p>Hi there! 👋 I'm the Shobhasiri Dental assistant. How can I help you today?</p></div>
+        <div class="chat-quick-replies" id="quickReplies">
+          <button class="quick-reply" data-query="opening hours">🕐 Opening Hours</button>
+          <button class="quick-reply" data-query="book appointment">📅 Book Appointment</button>
+          <button class="quick-reply" data-query="services">🦷 Our Services</button>
+          <button class="quick-reply" data-query="location">📍 Find Us</button>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" aria-label="Chat message" />
+        <button id="chatSend" aria-label="Send message">&#10148;</button>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
